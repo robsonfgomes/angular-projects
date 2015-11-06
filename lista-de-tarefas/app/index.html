@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="listaDeTarefas">
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de tarefas</title>
+		<!--Scripts-->
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+		<!--Styles-->		
+		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/themes/bootstrap-theme-paper.min.css">
+		<style type="text/css">
+			body ul {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Gerenciador de tarefas</h2>
+			<div class="col-lg-12 col-md-12">
+				<div ng-controller="TarefasController">
+					<span>{{restantes()}} de {{tarefas.length}}</span>
+					<ul>
+						<li ng-repeat="tarefa in tarefas">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="tarefa.feita"><span>{{tarefa.texto}}</span>
+								</label>
+							</div>							
+						</li>						
+					</ul>
+					<div>
+						<form name="formTarefa" id="formTarefa" class="form-horizontal" ng-submit="adicionarTarefa(tarefa)">
+							<fieldset>
+								<legend>Adicionar tarefa</legend>
+								<div class="form-group">
+									<div class="col-lg-3 col-md-3">
+										<div class="input-group">
+											<input type="text" class="form-control" ng-model="tarefa.texto" placeholder="Nome da tarefa" required>
+											<span class="input-group-btn" aria-hidden="true">
+												<button type="submit" class="btn btn-default" arial-label="Left Align">
+													<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+												</button>												
+											</span>
+										</div>	
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

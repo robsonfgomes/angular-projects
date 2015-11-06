@@ -1,0 +1,16 @@
+{
+  "name": "app-lista-de-tarefas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Robson Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.7",    
+    "bootstrap": "^3.3.5"
+  }
+}
